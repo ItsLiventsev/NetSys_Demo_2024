@@ -159,3 +159,24 @@ mcedit /etc/net/ifaces/ens192/ipv4address
 
 ### Настройка шлюза
 
+mcedit /etc/net/ifaces/ens192/ipv4route
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/d51608a7-5593-465a-a581-ac956c2af999)
+
+Обратите внимание, что мы создаем новые файлы, изначально в них пусто
+
+Прописываем адрес в привычном формате - пример для HQ-SRV - 192.168.0.1
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/ab2b6cb5-ea04-4c4d-a725-2b14f8ae4575)
+
+### Настройка IP-адреса DNS
+
+mcedit /etc/net/ifaces/ens192/resolv.conf
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/bac49099-2a90-4e0a-9ca7-59bb6f72f7a4)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/a5a3fdb5-ee0e-48f5-959f-da2bf58a04e5)
+
+Через команду ip route проверяем, что шлюз поставлен
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/9df072a1-4c3f-490a-b1db-bdc0ba3f25e8)
