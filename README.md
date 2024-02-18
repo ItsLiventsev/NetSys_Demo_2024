@@ -6,6 +6,23 @@
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/af62755f-eb59-4efa-91f2-da89b200ccb7)
 
+# Таблица сети
+
+| Имя устройства | Интерфейсы |  IPv4/IPv6    | Маска/Префикс |   Шлюз         |
+| :------------: | :--------: | :----------:  | :----------:  | :----------:   |
+|                | ens192     | 10.12.25.10   | /24           | 10.12.13.254   |
+| ISP            | ens224     | 192.168.0.170 | /30           |                |
+|                | ens256     | 192.168.0.162 | /30           |                |
+|                | ens161     | 1.1.1.3       | /30           |                |
+| HQ-R           | ens192     | 192.168.0.2   | /25           |                |
+|                | ens224     | 192.168.0.169 | /30           | 192.168.0.164  | 
+| BR-R           | ens192     | 192.168.0.130 | /27           |                |
+|                | ens224     | 192.168.0.161 | /30           | 192.168.0.164  |
+| HQ-SRV         | ens192     | 192.168.0.1   | /25           | 192.168.0.2    |
+| BR-SRV         | ens192     | 192.168.0.129 | /27           | 192.168.0.130  |
+| CLI            | ens192     | 1.1.1.2       | /30           | 1.1.1.3        |
+
+
 ## Базовая работа с сетями (выход в глобальную сеть, проброс DHCP, установка nmtui)
 
 Обратите внимание, что для настройки, необходимо работать с сетью VM Network (выходит на физический адаптер по NAT).
@@ -75,4 +92,70 @@ apt-get install NetworkManager-tui
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/17ab9a68-e43d-4e39-8f0a-6e604db5da65)
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/22e0a8ba-5576-4e98-980f-04b315cc75f9)
+
+### Установка программ в соответствии с заданием для каждой виртулаьной машины:
+
+| Имя устройства |  Программы  |  
+| :------------: | :---------: | 
+| ISP            | firewalld   | 
+|                | frr         | 
+|                | iperf3      | 
+|                |urbackup-server|
+|                |             | 
+| HQ-R           | firewalld   | 
+|                | frr         |
+|                | dhcp-server |
+|                | iperf3      |
+|                | chrony      |
+|                |             |
+| BR-R           | firewalld   | 
+|                | frr         | 
+|                |          | 
+| HQ-SRV         | openssh-server      |
+|                | bind      |
+|                | task-samba-dc admc|
+|                | mdadm            |
+|                | nfs-server            |
+|                | nfs-clients            |
+|                | nfs-utils            |
+|                |             |
+| BR-SRV         | task-auth-ad-sssd       | 
+| CLI            | task-auth-ad-sssd       |
+
+## Базовая работа с сетями (работа через тектовый редактор и файлы системы, настройка статики, dns)
+
+Для работы с сетевыми адаптерами через текстовый редактор используются следующие файлы:
+
+* options - выбор dhcp или static
+* ipv4address - адрес
+* ipv4route - маршрут, шлюз
+* /etc/resolv.conf - DNS-сервер
+
+### Настройка статического подключения
+
+Настройка файла options
+
+mcedit /etc/net/ifaces/ens192/options
+
+В файле проверем, чтобы значения стояли на статику (static)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/66503d13-82bd-411d-bff0-5fba1348fe44)
+
+### Настройка IP-адреса
+
+mcedit /etc/net/ifaces/ens192/ipv4address
+
+Обратите внимание, что мы создаем новые файлы, изначально в них пусто
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/d7713a50-4595-4815-bb7c-5ebd871edbb2)
+
+Прописываем адрес в привычном формате и через "/" прописываем маску - пример для HQ-SRV - 192.168.0.1/25
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f03d5719-392a-4c9e-9806-d7930f3696b4)
+
+Нажимаем на F10 И сохраняем изменения в файле.
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/c10079d2-cc90-415e-bd2b-22bbc48b3b21)
+
+### Настройка шлюза
 
