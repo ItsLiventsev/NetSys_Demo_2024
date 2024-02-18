@@ -3,11 +3,13 @@
 ### Базовый стенд для  09.02.06 Сетеве и системное администрирование представлен по сссылке - https://disk.yandex.ru/d/wVsAJMZ-fcZi3w (Стенд для добавления в VMware Player, вложенная виртуализация через ESXi).
 
 # Топология сети
+
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/af62755f-eb59-4efa-91f2-da89b200ccb7)
 
 ## Базовая работа с сетями (выход в глобальную сеть, проброс DHCP, установка nmtui)
 
 Обратите внимание, что для настройки, необходимо работать с сетью VM Network (выходит на физический адаптер по NAT).
+
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/e892be81-5bd6-4847-b4d9-47550cf2a223)
 
 ### Проброс виртуальной машины в сеть VM Network
@@ -21,6 +23,7 @@
 Используем текстовый редактор mcedit или vim (mcedit имеет графический интерфейс).
 
 Файлы для настройки сетевых адаптеров расположены по пути - /etc/net/iface/
+
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/a94cb3b7-9e81-4717-8b47-00552aab4cf8)
 
 Обратите внимание, что для каждого сетевого адаптера создается отдельная директория с настройками. Для выполнения базовых настроек (static или DHCP) используется уже созданный файл options.
@@ -50,6 +53,7 @@
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/6250241a-8247-4938-af13-c22af309daa4)
 
 ### Установка NetworkManager-tui
+
 apt-get update - обновляем репозитории (Обратите внимание, что работает только apt-get, команда apt отключена).
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/782d1dcd-c21b-4ceb-9c20-ab68d7c586d2)
@@ -67,5 +71,8 @@ apt-get install NetworkManager-tui
 Далее запускаем NetworkManager через команду - nmtui, если выводит ошибку перезапускаем службу пакета.
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/2feedfe6-dc9e-4ebd-911a-746258370b21)
+
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/17ab9a68-e43d-4e39-8f0a-6e604db5da65)
+
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/22e0a8ba-5576-4e98-980f-04b315cc75f9)
+
