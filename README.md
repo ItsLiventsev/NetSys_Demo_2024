@@ -182,41 +182,12 @@ mcedit /etc/net/ifaces/ens192/resolv.conf
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/9df072a1-4c3f-490a-b1db-bdc0ba3f25e8)
 
 --------------------------
---------------------------
 
-#### Данные для авториации
+#### Данные для авториации в виртуальных машинах стенда
 
-ELTEX (Пустой)
-
-admin
-
-password
-
-ELTEX (Настроенный)
-
-admin
-
-P@ssw0rd
-
-ALT_SRV (Настроенный)
-admin
-
-P@ssw0rd
-
-ALT_CLI (Настроенный)
-
-admin
-
-P@ssw0rd
-
-ASTRA_CLI (Пустой)
-
-toor
-
-P@ssw0rd
-
-ASTRA_CLI (Настроенный)
-
-root
-
-P@ssw0rd
+| Тип операционной системы | Логин      |  Пароль         |
+| :---------------------:  | :--------: | :-------------: | 
+| Eltex                    | admin      | P@ssw0rd        | 
+| ALT_SRV                  | admin      | P@ssw0rd        | 
+| ALT_CLI                  | admin      | P@ssw0rd        | 
+| ASTRA_CLI                | root       | P@ssw0rd        |
