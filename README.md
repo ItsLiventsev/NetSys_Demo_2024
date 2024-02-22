@@ -188,6 +188,6 @@ mcedit /etc/net/ifaces/ens192/resolv.conf
 | Тип операционной системы | Логин      |  Пароль         |
 | :---------------------:  | :--------: | :-------------: | 
 | Eltex                    | admin      | P@ssw0rd        | 
-| ALT_SRV                  | admin      | P@ssw0rd        | 
-| ALT_CLI                  | admin      | P@ssw0rd        | 
+| ALT_SRV                  | root       | P@ssw0rd        | 
+| ALT_CLI                  | user       | P@ssw0rd        | 
 | ASTRA_CLI                | root       | P@ssw0rd        |
