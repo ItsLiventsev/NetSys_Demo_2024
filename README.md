@@ -150,6 +150,8 @@ net.ipv4.ip_forward=1
 
 net.ipv6.conf.all.forwarding=1
 
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f274ab70-6db8-4ed3-ad0d-db41129a715c)
+
 После необходимо применить изменения - sysctl -p (или перезагрузиться).
 
 --------------------------
