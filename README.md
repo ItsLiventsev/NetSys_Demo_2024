@@ -162,7 +162,7 @@ net.ipv6.conf.all.forwarding=1
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/98cc2863-4de2-4495-bfbe-79b64b0129e7)
 
-#### Настройка на HQ-R (Надо дописать из Сферума)
+#### Настройка на HQ-R
 
 Перемещение сетевых адаптеров в зоны и включение NAT
 
@@ -185,7 +185,7 @@ net.ipv6.conf.all.forwarding=1
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/b3e3f8ea-177f-4f76-900c-ba84607fd966)
 
 
-#### Настройка на ISP (Надо дописать из Сферума)
+#### Настройка на ISP
 
 Перемещение сетевых адаптеров в зоны и включение NAT
 
@@ -203,7 +203,7 @@ net.ipv6.conf.all.forwarding=1
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/64853438-fcf0-4164-80ac-dbdef6866fe2)
 
-#### Настройка на BR-R (Надо дописать из Сферума)
+#### Настройка на BR-R
 
 Перемещение сетевых адаптеров в зоны и включение NAT
 
