@@ -545,6 +545,47 @@ systemctl enable --now urbackup-client
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/3a5170a7-667d-4d9f-9a45-c9426432b14a)
 
+# 7. Настройте подключение по SSH для удалённого конфигурирования устройства HQ-SRV по порту 2222. Учтите, что вам необходимо перенаправить трафик на этот порт по средствам контролирования трафика.
+
+Устанавливаем на HQ-SRV утилиту openssh-server
+
+apt-get install openssh-server
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/67eb8919-7519-42d4-a2db-a9f2dac17254)
+
+Добавляем openssh-server в автозагрузку
+
+systemctl enable --now sshd
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/61d20066-f65c-4e4e-85c8-5d88d1c1ac68)
+
+#### Конфигурация openssh-server
+
+Файл конфигурации - sshd_config
+
+mcedit /etc/openssh/sshd_config
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/6a271f03-d2b2-4518-9cfd-b4b9f0445df8)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/8e30daf4-11cd-4c72-ab7c-45d58cbcacbc)
+
+В соотвествии с заданием необходимо ssh-серверу использовать порт 2222
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/0ecfe865-1362-45d8-b50b-a4b482d2a288)
+
+Перезагружаем сервис для применения настроек
+
+systemctl restart sshd.service
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/e25632b2-7f7b-41aa-93f0-b38b53abe149)
+
+#### Подключение производится через клиента (утилита ssh)
+
+ssh имяпользователя@172.16.100.2 -p 2222
+
+-p - изменение стандартного для подключения порта
+
+
 # Данные для авториации в виртуальных машинах стенда
 
 | Тип операционной системы | Логин      |  Пароль         |
