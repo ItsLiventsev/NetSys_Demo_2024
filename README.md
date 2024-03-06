@@ -167,7 +167,7 @@ iptables-save
 
 mcedit /etc/net/scripts/nat
 
-#!/bin/sh
+#!/bin/sh                                                                       
 /sbin/iptables -A POSTROUTING -t nat -j MASQUERADE
 
 #### Настройка доступа на файл скрипта для всех возможных пользователей в системе 
