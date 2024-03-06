@@ -569,7 +569,7 @@ mcedit /etc/openssh/sshd_config
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/8e30daf4-11cd-4c72-ab7c-45d58cbcacbc)
 
-В соотвествии с заданием необходимо ssh-серверу использовать порт 2222
+В соотвествии с заданием необходимо ssh-серверу использовать порт 2222, для проверки работоспособности самого соединения можно оставить 22, если есть проблемы с firewall, но затем поменять по заданию, на 2222
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/0ecfe865-1362-45d8-b50b-a4b482d2a288)
 
