@@ -599,7 +599,7 @@ mcedit /etc/openssh/sshd_config
 
 Пример команды, если DNS точно работает: #AllowUsers admin@HQ-SRV admin@HQ-R branch_admin@BR-SRV branch_admin@BR-R network_admin@BR-R network_admin@BR-SRV
 
-Пример команды, если для IP (ЛУЧШЕ ПИСАТЬ ЕЁ): #AllowUsers admin@172.16.100.1 admin@172.16.100.1 branch_admin@192.168.100.10 branch_admin@192.168.100.1 network_admin@192.168.100.10
+Пример команды, если для IP (ЛУЧШЕ ПИСАТЬ ЕЁ): #AllowUsers admin@172.16.100.2 admin@172.16.100.1 branch_admin@192.168.100.10 branch_admin@192.168.100.1 network_admin@192.168.100.10
 
 # Данные для авториации в виртуальных машинах стенда
 
