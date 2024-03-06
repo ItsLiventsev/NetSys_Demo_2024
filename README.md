@@ -260,13 +260,35 @@ vtysh
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/b6eabe1f-193e-4a05-85c2-9752eecee1c5)
 
+conf t
+router eigrp 1
+network 1.1.1.0/30
+network 172.16.100.0/26
+do wr
+exit
+
 #### Настройки EIGRP на BR-R
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/76413a4e-a2a7-42a8-84e6-e9f433b273c2)
 
+conf t
+router eigrp 1
+network 2.2.2.0/30
+network 192.168.100.0/28
+do wr
+exit
+
 #### Настройки EIGRP на ISP
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/05f55bf5-3217-4fd6-860b-7b826cc47686)
+
+conf t
+router eigrp 1
+network 1.1.1.0/30
+network 2.2.2.0/30
+network 3.3.3.0/30
+do wr
+exit
 
 ##### Помните, что базы обновляются через промежуток времени
 
