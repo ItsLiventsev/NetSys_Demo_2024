@@ -156,7 +156,7 @@ net.ipv6.conf.all.forwarding=1
 
 --------------------------
 
-### Работа с NAT, открытие портов для передачи пакетов
+### Работа с NAT, открытие портов для передачи пакетов (если не уверены, что корректно работает, то выключаем firewalld и работаем дальше по заданию (systemctl stop firewalld)
 
 Пример зон для Firewalld
 
@@ -238,17 +238,15 @@ apt-get install frr
 
 Настройка утилиты frr:
 
-Обратите внимание, что для настройки OSPF для IPv4 используется протокол OSPF второй версии для IPv6 OSPF третьей версии.
-
 Для настройки OSPF необходимо включить соответствующий демон в конфигурации /etc/frr/daemons
 
 mcedit /etc/frr/daemons
 
 В конфигурационном файле /etc/frr/daemons необходимо активировать выбранный протокол для дальнейшей реализации его настройки
 
-ospfd = yes - для OSPFv2 (IPv4)
+eigrpd = yes - для EIGRP (IPv4)
 
-ospf6d = yes - для OSPFv3 (IPv6)
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/95be0aff-5457-46a2-8393-4d7b10a1c5d1)
 
 Включаем и добавляем в автозагрузку службу frr:
 
@@ -258,30 +256,19 @@ systemctl enable --now frr
 
 vtysh
 
-#### Настройки OSPFv2 и OSPFv3 на HQ-R
+#### Настройки EIGRP на HQ-R
 
-![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f8eda396-323d-4053-862d-c06ecc007495)
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/b6eabe1f-193e-4a05-85c2-9752eecee1c5)
 
-#### Настройки OSPFv2 и OSPFv3 на BR-R
+#### Настройки EIGRP на BR-R
 
-![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/c975593f-b36c-4f4d-b72d-23dc73e6757b)
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/76413a4e-a2a7-42a8-84e6-e9f433b273c2)
 
-##### Сноска по командам в frr
+#### Настройки EIGRP на ISP
 
-###### configure terminal - вход в режим глобальной конфигурации
-###### router ospf - переход в режим конфигурации OSPFv2
-###### passive-interface default - перевод всех интерфейсов в пассивный режим
-###### network - объявляем локальную сеть офиса HQ и сеть (GRE-туннеля)
-###### exit - выход и режима конфигурации OSPFv2
-###### туннельный интерфейс "tun1" делаем активным, для устанавления соседства с BR-R и обмена внутренними маршрутами
-###### no ip ospf passive - перевод интерфейса tun1 в активный режим
-###### write - сохраняем текущую конфигурацию
-###### router ospf6 - переход в режим конфигурации OSPFv3
-###### ospf6 router-id - назначение номера router-id
-###### сети интерфейсов tun1 и enp0s3 добавляем в конфигурацию OSPFv3
-###### write - сохраняем текущую конфигурацию
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/05f55bf5-3217-4fd6-860b-7b826cc47686)
 
-##### Помните, что базы OSPF обновляются через промежуток времени
+##### Помните, что базы обновляются через промежуток времени
 
 #### a. Составьте топологию сети L3
 
