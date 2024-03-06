@@ -261,10 +261,15 @@ vtysh
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/b6eabe1f-193e-4a05-85c2-9752eecee1c5)
 
 conf t
+
 router eigrp 1
+
 network 1.1.1.0/30
+
 network 172.16.100.0/26
+
 do wr
+
 exit
 
 #### Настройки EIGRP на BR-R
@@ -272,10 +277,15 @@ exit
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/76413a4e-a2a7-42a8-84e6-e9f433b273c2)
 
 conf t
+
 router eigrp 1
+
 network 2.2.2.0/30
+
 network 192.168.100.0/28
+
 do wr
+
 exit
 
 #### Настройки EIGRP на ISP
@@ -283,11 +293,17 @@ exit
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/05f55bf5-3217-4fd6-860b-7b826cc47686)
 
 conf t
+
 router eigrp 1
+
 network 1.1.1.0/30
+
 network 2.2.2.0/30
+
 network 3.3.3.0/30
+
 do wr
+
 exit
 
 ##### Помните, что базы обновляются через промежуток времени
@@ -404,6 +420,130 @@ passwd admin
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/0edae2da-a4c6-48fd-a595-25470bd495d5)
 
 ------------------------
+
+## 5. Измерьте пропускную способность сети между двумя узлами HQ-R-ISP по средствам утилиты iperf3. Предоставьте описание пропускной способности канала со скриншотами
+
+Установка утилиты iperf3 на HQ-R и ISP
+
+apt-get install iperf3
+
+#### Отключаем firewalld, если работает - systemctl stop firewalld
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f46e7c53-a7e6-483d-8aea-058e989cecb1)
+
+### Перевод работы iperf3 в режим "сервера" (делаем на ISP)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/7adada17-76e1-4999-be68-9dba42e7841f)
+
+### Отправка пакетов iperf3 на ISP с клиента HQ-R
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/e8ff09ac-a852-4922-a768-f13443ad093c)
+
+После чего на клиенте произойдет обработка таблицы передачи данных
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/4800a64b-7627-4ad8-8c0c-bfb77162fa76)
+
+Делаем скриншот ответа команды (таблицы) и сохраняем в "лист ответа".
+
+## 6. Составьте backup скрипты для сохранения конфигурации сетевых устройств, а именно HQ-R BR-R. Продемонстрируйте их работу.
+
+Для работы с Backup будем использовать утилиту UrBackup
+
+#### ISP является сервером UrBackup
+
+apt-get isntall urbackup-server
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/431e7b90-c960-48d0-b9af-18cfcc9c415b)
+
+Добавляем в автозагрузку
+
+systemctl enable --now urbackup-server
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/db0da1f7-27db-445c-95f0-1f507857d50b)
+
+Создаем директорию для хранения копий на сервере
+
+mkdir /mnt/backups
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/c85cb48f-183b-484f-b5af-a6008d9c1fe3)
+
+Даем права -R пользователю и утилете UrBackup на папку /mnt/backups
+
+chown -R urbackup:urbackup /mnt/backups/
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/43073a26-2769-4b34-a818-8094434054ae)
+
+Даем полные права на папку всем группам пользователей
+
+chmod 777 /mnt/backups/ 
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/459a84ec-9320-4a70-a65b-496787911f71)
+
+#### HQ-R и BR-R являются клиентом UrBackup
+
+apt-get install urbackup-client
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/53a1f716-5634-4fff-9838-be4a10823c11)
+
+Добавляем в автозагрузку
+
+systemctl enable --now urbackup-client
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/c8692819-86d7-42b8-87f2-c745f51d6a2e)
+
+#### Настройка UrBackup из браузера на графическом клиенте CLI
+
+Открываем браузер
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/1bef580f-2ac7-48c9-9262-bac250dfde86)
+
+Заходим на IP-адрес ISP с портом UrBackup (55414)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/884ac672-4dc8-4c73-8216-c9f0d1efe1e0)
+
+Видим в статусе работы ошибку
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/dc0f81c3-be0c-4523-9aa5-bf7e8e51ccf9)
+
+Переходим в вкладку настройки
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/35f9596b-dc07-4342-a9f2-6b1b2fd45e64)
+
+Изменяем путь для хранения бэкапов на /mnt/backups/
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/badd39bb-46e9-4b8f-a83f-e36cb0b68586)
+
+Снизу нажимаем "Сохранить"
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/2aa2b55a-505d-4776-af2a-c1db38d84fb8)
+
+Возвращаемся на вкладку "Статус", видим, что всё хорошо - сообщение с ошибкой пропало
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f5928da5-44da-4604-922a-855193a3c64e)
+
+#### Создаем скрипты для сохранения конфигурации сетевых устройств (файлы frr)
+
+Заходим в настройки, далее "Файловые бэкапы", пролистываем вниз до "Катологи по умолчанию для бэкаба" - прописываем путь до папки frr
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/02ffb9aa-c83e-4878-8c70-d1a82a3168a0)
+
+Нажимаем "Сохранить".
+
+#### Прирудительно создаем первый бэкап
+
+Открываем меню у имени компьютера
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/fc98a57b-54a4-4ed5-b378-6037d252ffce)
+
+Нажимаем на функцию "Полный файловый бэкап"
+
+Во вкладке "В работе", можем посмотреть выполнение задания
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/0e132a51-1abc-494c-8ab4-9ca8e461550c)
+
+После несколких минут, бэкап будет успешно создан.
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/3a5170a7-667d-4d9f-9a45-c9426432b14a)
 
 # Данные для авториации в виртуальных машинах стенда
 
