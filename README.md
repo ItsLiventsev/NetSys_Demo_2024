@@ -92,6 +92,11 @@ d. Пул адресов для сети офиса HQ - не более 64
 
 ### Настройка статического подключения
 
+Создаем папки для настроек сетевых адаптеров (пример для ISP)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/a8f74578-8b58-455a-967a-88e04c9a444d)
+
+
 Настройка файла options
 
 mcedit /etc/net/ifaces/ens192/options
@@ -100,7 +105,21 @@ mcedit /etc/net/ifaces/ens192/options
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/66503d13-82bd-411d-bff0-5fba1348fe44)
 
-### Настройка IP-адреса
+Копируем файл options в остальные папки настройки сетевых адаптеров
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/210c5dfa-76b2-43f7-af6f-198fe7ae2681)
+
+### Настройка динамического подключения
+
+На сетевом адаптере с IP по DHCP, прописываем параметр dhcp в BOOTPROTO
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/2458a11a-0ea6-4d87-9712-ae255ef517fb)
+
+После настройки, перезагружаем сеть
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/37943965-a377-4c32-9613-9e2f8b89ec27)
+
+### Настройка статического IP-адреса
 
 mcedit /etc/net/ifaces/ens192/ipv4address
 
