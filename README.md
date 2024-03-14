@@ -640,7 +640,7 @@ P.S. В задании не указан конкретный пользоват
 
 mcedit /etc/openssh/sshd_config
 
-![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/4726d137-3e7e-4d60-a9a4-9fb6efc59255)
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/ae6ff510-5394-4a8c-9a63-b7be5cb8632a)
 
 Пример команды, если DNS точно работает: AllowUsers admin@HQ-SRV admin@HQ-R branch_admin@BR-SRV branch_admin@BR-R network_admin@BR-R network_admin@BR-SRV
 
