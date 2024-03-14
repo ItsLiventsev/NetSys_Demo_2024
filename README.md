@@ -640,11 +640,11 @@ P.S. В задании не указан конкретный пользоват
 
 mcedit /etc/openssh/sshd_config
 
-![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/6cbd9ebc-c587-45d0-ab40-1b13cf193ea0)
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/4726d137-3e7e-4d60-a9a4-9fb6efc59255)
 
-Пример команды, если DNS точно работает: #AllowUsers admin@HQ-SRV admin@HQ-R branch_admin@BR-SRV branch_admin@BR-R network_admin@BR-R network_admin@BR-SRV
+Пример команды, если DNS точно работает: AllowUsers admin@HQ-SRV admin@HQ-R branch_admin@BR-SRV branch_admin@BR-R network_admin@BR-R network_admin@BR-SRV
 
-Пример команды, если для IP (ЛУЧШЕ ПИСАТЬ ЕЁ): #AllowUsers admin@172.16.100.2 admin@172.16.100.1 branch_admin@192.168.100.10 branch_admin@192.168.100.1 network_admin@192.168.100.10
+Пример команды, если для IP (ЛУЧШЕ ПИСАТЬ ЕЁ): AllowUsers admin@172.16.100.2 admin@172.16.100.1 branch_admin@192.168.100.10 branch_admin@192.168.100.1 network_admin@192.168.100.10
 
 ----------------------------------
 # Модуль 2: Организация сетевого администрирования
