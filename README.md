@@ -159,6 +159,16 @@ mcedit /etc/net/ifaces/ens192/resolv.conf
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/9df072a1-4c3f-490a-b1db-bdc0ba3f25e8)
 
+### Настройка имени хоста на устройстве без графического интерфейса
+
+Заходим в файл конфигурации имени хоста
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/d96120bb-ed81-4dbe-b159-20d35c8e53d3)
+
+В файле изменяем значение на имя машины (напр. HQ-SRV).
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/721597e3-433a-44c5-b519-ff39f08d443e)
+
 ### Настройка IP-адреса на устройстве c графическим интерфейсом
 
 Работа на клиенте витуальной машины (CLI).
