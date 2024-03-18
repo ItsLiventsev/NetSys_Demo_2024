@@ -259,6 +259,10 @@ systemctl enable --now iptables
 
 #### Работа с NAT, открытие портов для передачи пакетов (firewalld, если не уверены, что корректно работает, то выключаем firewalld и работаем дальше по заданию (systemctl stop firewalld)
 
+apt-get update - обновление репозиториев
+
+apt-get install firewalld - установка пакета firewalld
+
 Пример зон для Firewalld
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/98cc2863-4de2-4495-bfbe-79b64b0129e7)
