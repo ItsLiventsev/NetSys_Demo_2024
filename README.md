@@ -189,6 +189,21 @@ mcedit /etc/net/ifaces/ens192/resolv.conf
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/6783262a-1137-48ee-ba6e-eadae7af5302)
 
+### Настройка имени хоста на устройстве c графическим интерфейсом
+
+Заходим в терминал.
+
+Авторизуемся под пользователем root - пишем "su"
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/ce003e2c-6dda-421b-85d3-646359467f53)
+
+Заходим в файл конфигурации имени хоста
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f34d87a1-10b8-4fda-bd38-7c2b9fcb3996)
+
+В файле имзеняем значение на имя машины (ClI).
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/5b69d77e-ab0a-4ce2-9a52-acb28ffc10a4)
 
 ### Маршрутизация транзитных пакетов на роутерах на устройстве без графического интерфейса
 
