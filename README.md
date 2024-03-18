@@ -201,7 +201,7 @@ mcedit /etc/net/ifaces/ens192/resolv.conf
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f34d87a1-10b8-4fda-bd38-7c2b9fcb3996)
 
-В файле имзеняем значение на имя машины (ClI).
+В файле изменяем значение на имя машины (ClI).
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/5b69d77e-ab0a-4ce2-9a52-acb28ffc10a4)
 
