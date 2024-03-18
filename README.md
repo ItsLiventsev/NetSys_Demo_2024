@@ -90,7 +90,7 @@ d. Пул адресов для сети офиса HQ - не более 64
 * ipv4route - маршрут, шлюз
 * /etc/resolv.conf - DNS-сервер
 
-### Настройка статического подключения
+### Настройка статического подключения на устройстве без графического интерфейса
 
 Создаем папки для настроек сетевых адаптеров (пример для ISP)
 
@@ -109,7 +109,7 @@ mcedit /etc/net/ifaces/ens192/options
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/210c5dfa-76b2-43f7-af6f-198fe7ae2681)
 
-### Настройка динамического подключения
+### Настройка динамического подключения на устройстве без графического интерфейса
 
 На сетевом адаптере с IP по DHCP, прописываем параметр dhcp в BOOTPROTO
 
@@ -119,7 +119,7 @@ mcedit /etc/net/ifaces/ens192/options
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/37943965-a377-4c32-9613-9e2f8b89ec27)
 
-### Настройка статического IP-адреса
+### Настройка статического IP-адреса на устройстве без графического интерфейса
 
 mcedit /etc/net/ifaces/ens192/ipv4address
 
@@ -135,7 +135,7 @@ mcedit /etc/net/ifaces/ens192/ipv4address
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/c10079d2-cc90-415e-bd2b-22bbc48b3b21)
 
-### Настройка шлюза
+### Настройка шлюза на устройстве без графического интерфейса
 
 mcedit /etc/net/ifaces/ens192/ipv4route
 
@@ -147,7 +147,7 @@ mcedit /etc/net/ifaces/ens192/ipv4route
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/ab2b6cb5-ea04-4c4d-a725-2b14f8ae4575)
 
-### Настройка IP-адреса DNS
+### Настройка IP-адреса DNS на устройстве без графического интерфейса
 
 mcedit /etc/net/ifaces/ens192/resolv.conf
 
@@ -159,7 +159,38 @@ mcedit /etc/net/ifaces/ens192/resolv.conf
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/9df072a1-4c3f-490a-b1db-bdc0ba3f25e8)
 
-### Маршрутизация транзитных пакетов на роутерах
+### Настройка IP-адреса на устройстве c графическим интерфейсом
+
+Работа на клиенте витуальной машины (CLI).
+
+Заходим в настройки сетевых адаптеров, правой кнопкой мыши по значку в трее, выбираем пункт параметры соединений.
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/c1ce2ab2-10e6-4e3c-9ded-94e3121fea16)
+
+Видим сетевые адаптеры для настройки.
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/0197e180-43a1-4c39-bc38-e7a3970b6251)
+
+Октрываем каждый сетевой адаптер, проверям название сетевого адаптера, сверяем МАС-адрес с настройками MAC-адреса на виртуальном сетевом адаптере (в настройках виртуальной машины).
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/74361db1-d3f2-4d1a-91ce-001583411c01)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/ecf0ad6f-566f-415f-abb2-c3ca75fdd34d)
+
+Далее заходим в "Параметры IPv4"
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/63d40e28-d342-4b78-9075-2e428ccc8e28)
+
+При работе с сетью ISP-CLI - выбираем значение "Вручную"
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/72a216bd-dbb8-455a-8dac-1fa01228a3f3)
+
+При работе с выходом в интернет - выбираем значение "Автоматически"
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/6783262a-1137-48ee-ba6e-eadae7af5302)
+
+
+### Маршрутизация транзитных пакетов на роутерах на устройстве без графического интерфейса
 
 На устройствах ISP, HQ-R, BR-R необходимо включить пересылку пакетов между интерфейсами - forwarding. Чтобы включить пересылку пакетов между интерфейсами, необходимо отредактировать файл sysctl.conf.
 
