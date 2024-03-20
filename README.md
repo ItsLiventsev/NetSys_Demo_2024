@@ -461,7 +461,7 @@ systemctl enable --now dhcpd
 
 Открываем файл и ставим настройки в зависимости от задания
 
-![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/7e4d1192-f54e-4a17-abca-1ff3eb9ad202)
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/66e0afa1-a087-423f-9faf-a7f2b2b9d787)
 
 #### a. Учтите, что у сервера должен быть зарезервирован адрес
 
@@ -473,7 +473,7 @@ systemctl enable --now dhcpd
 
 Прописываем значение MAC-адреса в конфигурацию DHCP-сервера, создав подпункт host HQ-SRV. Фиксируем адрес, через команду fixed-address
 
-![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/767d74df-baa7-4d92-84e2-14113cdc7da7)
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/54c4aa63-06b2-41b0-89c7-ebac924afe9f)
 
 Добавляем сервис в автозагрузку
 
