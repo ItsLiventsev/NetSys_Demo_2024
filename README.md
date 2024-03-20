@@ -423,6 +423,12 @@ exit
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/cef64cb5-46d8-40cc-8990-251f3b963f77)
 
+Пример схемы
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/d185915b-2c7d-4196-b108-2813bd01466d)
+
+Ссылка на схему - https://drive.google.com/file/d/1tOrebpwJ0VOjwrYdC4msqSNrtXjWLGpj/view?usp=sharing
+
 ----------------------
 # 3. Настройте автоматическое распределение IP-адресов на роутере HQ-R
 a. Учтите, что у сервера должен быть зарезервирован адрес.
