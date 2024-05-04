@@ -73,6 +73,48 @@
 | BR-SRV         | task-auth-ad-sssd       | 
 | CLI            | task-auth-ad-sssd       |
 
+#### Добавление сетевого адаптера в виртуальную машину в ESXi (по картинкам)
+
+ПКМ по виртуальной машине и заходим в настройки 
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/92bc2b2e-1d24-4f50-b8e0-4bc69446c486)
+
+В настройках сверху нажимаете добавить сетевой адаптер (далее в окне "новые" адаптеры будут  выделяться зеленным)
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/ce494d6a-ddce-4d6e-8c28-b8af4485a571)
+
+Выбираем виртуальную сеть, в которой будет работать адаптер
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/2839df6e-65a6-40e7-8a9f-48646ad1ed72)
+
+Если нужно еще больше адаптеров, то повторяем дейтвия (ОБРАТИТЕ ВНИМАНИЕ, что изначально в задании от ИРПО нет пункта о проверке сетевых адаптеров, но вам МОГУТ РАЗБИТЬ ЗАДАНИЕ - экспертная группа проверки ДЭ могут добавить дополнительный пункт и разбить баллы в 1 модуле 1 задание, где будет условный пункт "е" с проверкой, а тажке могут вам заранее поломать сеть в стенде.
+
+Скриншоты корректной настройки адаптеров на каждой ВМ (если не поменяют названия сетей)
+
+HQ-SRV
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/cf7325cd-b233-433d-8398-31d51ac4a2de)
+
+CLI
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/8bb83430-4823-4b36-b438-6303da61fd23)
+
+BR-R
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f36a481e-f1d6-4767-a5fd-057386e05189)
+
+BR-SRV
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/14bdfb3d-5ef0-41f3-9ff9-2291873dcba3)
+
+HQ-R
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/991c2243-8e80-48b0-8b74-7d76ffbffd77)
+
+ISP
+
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/a4da377e-0d99-4e6e-8f3c-17ec3212303f)
+
 # Модуль 1: Выполнение работ по проектированию сетевой инфраструктуры
 
 # 1. Выполните базовую настройку всех устройств:
