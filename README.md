@@ -469,11 +469,9 @@ exit
 
 В пункте "Сети" находите Cisco, ставите галочку и нажимаете применить
 
-![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f50b77b5-445b-4164-b453-eac2d069ff80)
-
-
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/d2f13468-8646-4642-b08c-15957dc826ad)
 
+![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/f50b77b5-445b-4164-b453-eac2d069ff80)
 
 ![image](https://github.com/ItsLiventsev/NetSys_Demo_2024/assets/108996446/cef64cb5-46d8-40cc-8990-251f3b963f77)
 
