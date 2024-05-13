@@ -63,7 +63,7 @@
 |                | frr         | 
 |                |          | 
 | HQ-SRV         | openssh-server      |
-|                | bind9      |
+|                | bind      |
 |                | task-samba-dc admc|
 |                | mdadm            |
 |                | nfs-server            |
@@ -775,9 +775,9 @@ a. На DNS сервере необходимо настроить 2 зоны
 
 На HQ-SRV устанавливаем утилиту DNS-сервера bind9
 
-apt get install bind9
+apt get install bind
 
-Добавляем в автозагрузку службу bind9:
+Добавляем в автозагрузку службу bind:
 
 systemctl enable --now bind
 
