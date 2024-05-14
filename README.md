@@ -796,8 +796,10 @@ mcedit /var/lib/bind/etc/options.conf
 mcedit /etc/resolv.conf
 
 search hq.work
+
 search branch.work
-nameserver 127.0.0.1
+
+nameserver 172.16.100.2
 
 ----------------------------------
 
